@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Playlist Detail</h1>
+
+<table>
+    <thead>
+        <th>Description</th>
+        <th>Mood</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{playlist.description}}</td>
+            <td>{{playlist.get_mood_display}}</td>
+        </tr>
+    </tbody>
+</table>
+
+{% endblock %}

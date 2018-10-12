@@ -1,0 +1,40 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mood Music</title>
+    <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <ul>
+            <li><a class="logo" href="{% url 'home' %}">Mood Music</a></li>&nbsp;&nbsp;&nbsp;&nbsp;
+            {% if user.is_authenticated %}
+                    <li class="authenticated"><a href="{% url 'playlist_list' %}">My Playlist</a></li>&nbsp;|&nbsp;
+                    <li><a href="{% url 'playlist_create' %}">Add Song</a></li>
+            {% endif %}
+        </ul>
+        {% if user.is_authenticated %}
+            <ul>
+                <li class="welcome_user">Welcome {{user.username}}! &nbsp;|&nbsp;</li>
+                <li><a href="{% url 'logout' %}">LOG OUT</a></li>
+            </ul>
+        {% else %}
+            <ul>
+                <li><a href="{% url 'signup' %}">SIGN UP</a> &nbsp;|&nbsp;</li>
+                <li><a class="nav" href="{% url 'login' %}">LOG IN</a></li>
+            </ul>
+        {% endif %}
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>COPYRIGHT &copy; 2018</footer>
+</body>
+</html>

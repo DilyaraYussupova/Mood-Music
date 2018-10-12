@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>My Playlist</h1>
+
+<table>
+    <thead>
+        <th>Description</th>
+    </thead>
+    <tbody>
+        {% for mood in MOOD %}
+        <tr><td><a href="{% url 'playlist_detail' playlist.id %}">{{playlist.description}}</a></td></tr>
+        {% empty %}
+        <tr><td>YOU HAVE NO PLAYLIST</td></tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
