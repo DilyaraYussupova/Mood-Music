@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="addsong-h">Please fill the form below, to add a song!</h2>
+<div class="addsongbox">
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="file" name="photo-file">
+        <br>
+        <input class="addbtn" type="submit" value="Add Song!">
+    </form>
+</div>
+{% endblock %}

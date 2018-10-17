@@ -1,19 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Playlist Detail</h1>
+<h1 class="detail-h1">{{ playlist.name }}</h1>
 
-<table>
-    <thead>
-        <th>Description</th>
-        <th>Mood</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>{{playlist.description}}</td>
-            <td>{{playlist.get_mood_display}}</td>
-        </tr>
-    </tbody>
-</table>
+<h2 class="detail-h2">Song List</h2>
+<a class="addbtn-song" href="{% url 'add_song' playlist.id %}">Add Song</a>
+
+{% for song in playlist.songs.all %}
+    <div class="main-box">
+        <div class="song-info">
+            <p class="song-item">Name: {{ song.name }}</p>
+            <p class="song-item">Artist: {{ song.artist }}</p>
+            <p class="song-item">Album: {{ song.album }}</p>
+            <p class="song-item">Genre: {{ song.genre }}</p>
+            <p class="song-item">Year: {{ song.year }}</p>
+            <a class="song-item" id="update-btn" href="{% url 'songs_update' playlist.id song.id %}">Edit</a>
+            <a class="song-item" id="delete-btn" href="{% url 'songs_delete' playlist.id song.id %}">Delete</a>
+        </div>
+        <div class="song-photo">
+            <img class="song-image" src="{{song.photo_url}}">
+        </div>
+    </div>
+{% empty %}
+    <p>YOU HAVE NO SONGS YET IN THE PLAYLIST</p>
+{% endfor %}
 
 {% endblock %}

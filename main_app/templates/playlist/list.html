@@ -2,18 +2,18 @@
 
 {% block content %}
 
-<h1>My Playlist</h1>
+<h1 class="my-playlist">My Playlist</h1>
 
 <table>
     <thead>
-        <th>Description</th>
     </thead>
     <tbody>
-        {% for mood in MOOD %}
-        <tr><td><a href="{% url 'playlist_detail' playlist.id %}">{{playlist.description}}</a></td></tr>
-        {% empty %}
-        <tr><td>YOU HAVE NO PLAYLIST</td></tr>
-        {% endfor %}
+        <div class="moodbox-list">
+        <li><a class="happy" id="list" href="{% url 'playlist_detail' 'h' %}">Happy Playlist</a></li>
+        <li><a class="sad" id="list" href="{% url 'playlist_detail' 's' %}">Sad Playlist</a></li>
+        <li><a class="sleepy" id="list" href="{% url 'playlist_detail' 'p' %}">Sleepy Playlist</a></li>
+        <li><a class="emotional" id="list" href="{% url 'playlist_detail' 'e' %}">Emotional Playlist</a></li>
+        </div>
     </tbody>
 </table>
 

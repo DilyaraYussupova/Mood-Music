@@ -1,7 +1,22 @@
+
 {% extends 'base.html' %}
 {% block content %} 
-<div class="homepage">
-    <h1>Music for you Mood!</h1>
-    <p>To get started, please <span>sign in/log in</span></p>
-</div>
+    {% if user.is_authenticated %}
+    <div class="homepage">
+        <h1>Welcome to Mood Music app!</h1>
+        <p>Please choose you mood below:</p>
+            <div class="moodbox">
+                <a class="happy" href="{% url 'playlist_detail' 'h' %}">Happy</a>
+                <a class="sad" href="{% url 'playlist_detail' 's' %}">Sad</a>
+                <a class="sleepy" href="{% url 'playlist_detail' 'p' %}">Sleepy</a>
+                <a class="emotional" href="{% url 'playlist_detail' 'e' %}">Emotional</a>
+            </div>
+    </div>
+    {% else %}
+    <div class="homepage">
+        <h1>Music for you Mood!</h1>
+        <p>To get started, please <span class="welcome">sign in/log in</span></p>
+    </div>
+    {% endif %}
 {% endblock %}
+

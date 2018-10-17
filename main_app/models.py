@@ -2,21 +2,42 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 
+MOODS = (
+    ('h', 'Happy'),
+    ('s', 'Sad'),
+    ('p', 'Sleepy'),
+    ('e', 'Emotional'),
+)
+
 # Create your models here.
+class Song(models.Model):
+    name = models.CharField(max_length=100)
+    artist = models.CharField(max_length=100)
+    album = models.CharField(max_length=100)
+    genre = models.CharField(max_length=100)
+    year = models.IntegerField()
+    photo_url = models.CharField(max_length=200, default='https://cdn.shopify.com/s/files/1/0638/5445/products/Chicago.jpg?v=1487360969')
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('playlist_list', kwargs={'playlist_id': self.id})
+
 class Playlist(models.Model):
-    MOOD = (
-        ('h', 'Happy'),
-        ('s', 'Sad'),
-        ('n', 'Nostalgic'),
-        ('s', 'Sleepy'),
-        ('e', 'Excited'),
-    )
-    description = models.TextField(max_length=300)
+    name = models.CharField(max_length=100)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     mood = models.CharField(
         max_length=1,
-        choices=MOOD,
-        default=MOOD[0][0]
+        choices=MOODS,
+        default=MOODS[0][0]
     )
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    songs = models.ManyToManyField(Song, blank=True)
+    
+    def __str__(self):
+        return self.name
+    
     def get_absolute_url(self):
         return reverse('playlist_list')
+
+
