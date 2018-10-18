@@ -65,9 +65,8 @@ class SongDelete(DeleteView):
     template_name = 'main_app/song_confirm_delete.html'
 
     def delete(self, request, *args, **kwargs):
-        self.object = self.get_object()
         playlist = Playlist.objects.get(id=self.kwargs['playlist_id'])
-        self.object.delete()
+        playlist.songs.remove(self.kwargs['pk'])
         return redirect(f"/playlist/{playlist.mood}")
 
 def signup_view(request):

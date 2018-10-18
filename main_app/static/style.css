@@ -310,7 +310,7 @@ input[type=submit] {
     height: 30px;
     width: 70px;
     color: white;
-    margin: 20px 80px;
+    margin: 20px 80px 20px 120px;
     font-size: 15px;
     cursor: pointer;
 }
@@ -387,4 +387,8 @@ input[type=file] {
     display: inline;
     margin-left: 360px;
     margin-right: 0px;  
+}
+
+input[class=deletebtn] {
+    width: 120px;
 }

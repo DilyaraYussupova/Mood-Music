@@ -22,7 +22,7 @@ class Song(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('playlist_list', kwargs={'playlist_id': self.id})
+        return f"/playlist_list/{self.mood}"
 
 class Playlist(models.Model):
     name = models.CharField(max_length=100)
@@ -38,6 +38,6 @@ class Playlist(models.Model):
         return self.name
     
     def get_absolute_url(self):
-        return reverse('playlist_list')
+        return f"/playlist_list/{self.mood}"
 
 
