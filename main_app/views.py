@@ -46,7 +46,7 @@ class SongCreate(CreateView):
                 self.object.photo_url = url
                 self.object.save()
             except:
-                print('An error occurred uploading file to S3')
+                print('An error occurred while uploading file to S3')
         return redirect(f"/playlist/{playlist.mood}")
 
 class SongUpdate(UpdateView):
