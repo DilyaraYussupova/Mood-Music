@@ -21,7 +21,7 @@ main {
     align-items: center;
     overflow-y: scroll;
     background-color: rgb(246, 189, 90);
-    background: url("https://i.imgur.com/dLfL3Oi.jpg") no-repeat;
+    background: url("https://i.imgur.com/dLfL3Oi.jpg") no-repeat center center fixed;
     height: 100%; 
     width: 100%;
     background-position: center;

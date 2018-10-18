@@ -10,6 +10,7 @@ django = "*"
 gunicorn = "*"
 django-heroku = "*"
 boto3 = "*"
+django-crispy-forms = "*"
 
 
 [requires]
