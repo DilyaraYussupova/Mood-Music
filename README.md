@@ -16,6 +16,7 @@ Project 2
   * Bootstrap
 * Heroku
 * Boto3
+* AWS
 
 ## Getting Started
 * Deployed app: https://warm-ridge-11693.herokuapp.com/
