@@ -4,7 +4,7 @@ Project 2
 ## Description of the app
 **Mood Music App** is an app which allows users to choose a playlist (Happy/Sad/Sleepy/Emotional), which corresponds with their current mood.
 
-![ScreenShot](/img/screenshot.png)
+![ScreenShot](screenshot.png)
 ![ScreenShot](/moodmusic/main_app/static/img/Screenshot_2.png)
 
 ## Technologies Used
