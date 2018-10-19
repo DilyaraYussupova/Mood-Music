@@ -22,6 +22,8 @@ Project 2
 ## Unsolved problems
 * Mobile-first responsive app
 * Update existing song cover (photo) 
-
+* Decent looking login/signup pages
 
 ## Future (Ice Box) Features
+* AAU, be able to rate each song and highlight the favorite one
+* AAU, be able to create new playlists
