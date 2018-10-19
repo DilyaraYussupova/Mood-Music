@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Delete Song</h1>
+    <h1 class="delete">Delete Song</h1>
 
-    <h4>Are you sure you want to delete the song - <strong>{{ object }}</strong>?</h4>
+    <h4 class="delete_msg">Are you sure you want to delete the song - <strong>{{ object }}</strong>?</h4>
 
     <form action="" method="POST">
         {% csrf_token %}

@@ -35,6 +35,7 @@ header {
     justify-content: space-between;
     padding: .2rem 1rem;
     background-color: black;
+    height: 80px;
 }
 
 li {
@@ -74,7 +75,7 @@ thead th {
 
 .homepage {
     text-align: center;
-    margin: 30px auto;
+    margin: 100px auto 30px auto;
     color: white;
 }
 
@@ -110,16 +111,25 @@ p {
     padding: 13px;
 }
 
-/* .login {
+.navbar_top {
+    margin-top: 10px;
+}
+
+.login {
     margin: 80px auto;
 }
 
 .log {
-    font-size: 70px;
+    font-size: 60px;
     color: white;
     font-weight: 800;
     text-align: center;
-} */
+}
+
+.btn-success {
+    margin: 20px 0 0 120px;
+    background-color: orange;
+}
 
 .signup {
     text-align: center;
@@ -132,8 +142,11 @@ p {
     text-align: center;
 }
 
-.authenticated {
-    margin: 0 20px 0 450px;
+.authen {
+    margin-left: 220px;
+    padding: 0;
+    margin-left: 800px;
+    margin-top: -36px;
 }
 
 .welcome_user {
@@ -236,7 +249,7 @@ a {
     float: left; 
     width: 150px; 
     text-decoration: none;  
-    margin: 80px 50px;
+    margin: 100px 50px;
     padding: 20px 10px;
 }
 
@@ -341,8 +354,17 @@ input[class=addbtn] {
     font-size: 30px;
 }
 
-.my-playlist, .no-song {
+.my-playlist {
+    margin-top: 30px;
+}
+
+.my-playlist, .no-song, .update, .delete {
     color: white;
+}
+
+.delete_msg {
+    color: white;
+    margin: 30px auto;
 }
 
 input[type=text],[type=number], [type=password]{
@@ -383,12 +405,11 @@ input[type=file] {
     margin-left: 800px;
 }
 
-.authenticated {
-    display: inline;
-    margin-left: 360px;
-    margin-right: 0px;  
-}
-
 input[class=deletebtn] {
     width: 120px;
+}
+
+.nosong {
+    color: white;
+    margin-top: 40px;
 }

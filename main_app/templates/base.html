@@ -16,21 +16,21 @@
 </head>
 <body>
     <header>
-        <ul>
-            <li><a class="logo" href="{% url 'home' %}">Mood Music</a></li>&nbsp;&nbsp;&nbsp;&nbsp;
-            {% if user.is_authenticated %}
-            <ul class="authenticated">
-                <li class="authenticated"><a href="{% url 'playlist_list' %}">My Playlist</a></li>&nbsp;|&nbsp;
-                <li class="welcome_user">Welcome {{user.username}}! &nbsp;||&nbsp;</li>
-                <li><a href="{% url 'logout' %}">LOG OUT</a></li>
+            <ul class="navbar_top">
+                <li><a class="logo" href="{% url 'home' %}">Mood Music</a></li>&nbsp;&nbsp;&nbsp;&nbsp;
+                {% if user.is_authenticated %}
+                <ul class="authen">
+                    <li class="authenticated"><a href="{% url 'playlist_list' %}">My Playlist</a></li>&nbsp;|&nbsp;
+                    <li class="welcome_user">Welcome {{user.username}}! &nbsp;||&nbsp;</li>
+                    <li><a href="{% url 'logout' %}">LOG OUT</a></li>
+                </ul>
             </ul>
-        </ul>
-        {% else %}
-            <ul class="unauthenticated">
-                <li><a href="{% url 'signup' %}">SIGN UP</a> &nbsp;||&nbsp;</li>
-                <li><a class="nav" href="{% url 'login' %}">LOG IN</a></li>
-            </ul>
-        {% endif %}
+            {% else %}
+                <ul class="unauthenticated">
+                    <li><a href="{% url 'signup' %}">SIGN UP</a> &nbsp;||&nbsp;</li>
+                    <li><a class="nav" href="{% url 'login' %}">LOG IN</a></li>
+                </ul>
+            {% endif %}
     </header>
     <main>
         {% block content %}
