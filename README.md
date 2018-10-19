@@ -6,6 +6,7 @@ Project 2
 
 ![ScreenShot](/main_app/static/img/Mood Music_homepage.png)
 ![ScreenShot](/main_app/static/img/Screenshot_2.png)
+![ScreenShot](/main_app/static/img/Screenshot_3.png)
 
 ## Technologies Used
 * Python
