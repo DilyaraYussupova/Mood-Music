@@ -14,7 +14,7 @@ Project 2
 * CSS
   * Bootstrap
 * Heroku
-*Boto3
+* Boto3
 
 ## Getting Started
 * Deployed app: https://warm-ridge-11693.herokuapp.com/
